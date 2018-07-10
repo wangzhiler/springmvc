@@ -6,6 +6,11 @@
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="springmvc001" />
+          <element id="dir-copy" path="$PROJECT_DIR$/springmvc001/web/WEB-INF/lib" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="application" name="Spring-4.3.18.RELEASE" />
+          <element id="library" level="application" name="Spring MVC-4.3.18.RELEASE" />
         </element>
       </element>
     </root>

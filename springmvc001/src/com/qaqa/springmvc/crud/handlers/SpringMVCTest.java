@@ -1,16 +1,14 @@
-package com.qaqa.springmvc.handlers;
+package com.qaqa.springmvc.crud.handlers;
 
-import com.qaqa.springmvc.entities.User;
+import com.qaqa.springmvc.crud.entities.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.portlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.Writer;
 import java.util.Arrays;
-import java.util.Date;
 import java.util.Map;
 
 /**
@@ -23,6 +21,18 @@ import java.util.Map;
 public class SpringMVCTest {
 
     private static final String SUCCESS = "success";
+
+    @RequestMapping("testRedirect")
+    public String testRedirect() {
+        System.out.println("testRedirect");
+        return "redirect:/index.jsp";
+    }
+
+    @RequestMapping("/testView")
+    public String testView() {
+        System.out.println("testView");
+        return "helloView";
+    }
 
     @RequestMapping("/testViewAndViewResolver")
     public String testViewAndViewResolver() {
@@ -190,12 +200,14 @@ public class SpringMVCTest {
     //在SpringMVC的目标方法中如何得到id呢?
     //使用@PathVariable注解
     @RequestMapping(value = "/testRest/{id}", method = RequestMethod.PUT)
-    public String testRestPut(@PathVariable Integer id) {
+    @ResponseBody()
+    public String testRestPut(@PathVariable(value = "id") Integer id) {
         System.out.println("testRest PUT: " + id);
         return SUCCESS;
     }
 
     @RequestMapping(value = "/testRest/{id}", method = RequestMethod.DELETE)
+    @ResponseBody()
     public String testRestDelete(@PathVariable Integer id) {
         System.out.println("testRest DELETE: " + id);
         return SUCCESS;

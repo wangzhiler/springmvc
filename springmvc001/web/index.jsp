@@ -12,6 +12,10 @@
   </head>
   <body>
 
+  <a href="springmvc/testRedirect">lastName Redirect</a>
+  <br/>
+  <a href="springmvc/testView">Test View</a>
+  <br/>
   <a href="springmvc/testViewAndViewResolver">Test ViewAndViewResolver</a>
   <br/>
 
@@ -86,7 +90,7 @@
   <br/>
   <a href="springmvc/testAntPath/fhowij/abc">Test AntPath</a>
   <br/>
-  <a href="springmvc/testParamsAndHeaders?username=a&age=10">test ParamsAndHeaders</a>
+  <a href="springmvc/testParamsAndHeaders?username=a&age=10">lastName ParamsAndHeaders</a>
   <br/>
   <form action="springmvc/testMethod" method="POST">
       <input type="submit" value="submit">

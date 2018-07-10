@@ -1,4 +1,4 @@
-package com.qaqa.springmvc.entities;
+package com.qaqa.springmvc.crud.entities;
 
 /**
  * Created by thinkpad on 2018/6/30.

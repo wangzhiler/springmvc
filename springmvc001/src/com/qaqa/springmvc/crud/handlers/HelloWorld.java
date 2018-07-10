@@ -1,4 +1,4 @@
-package com.qaqa.springmvc.handlers;
+package com.qaqa.springmvc.crud.handlers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
