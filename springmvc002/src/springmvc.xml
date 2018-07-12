@@ -55,8 +55,18 @@
     <bean id="localeResolver"
           class="org.springframework.web.servlet.i18n.SessionLocaleResolver"/>
 
-    <!--配置LocaleChanceInterceptor-->
+    <!--拦截顺序 handle之前正序，handle之后倒序-->
     <mvc:interceptors>
+        <!--配置自定义的拦截器-->
+        <bean class="com.qaqa.springmvc.crud.interceptors.FirstInterceptor"/>
+
+        <!--配置拦截器(不)作用的路径-->
+        <mvc:interceptor>
+            <mvc:mapping path="/emps"/>
+            <bean class="com.qaqa.springmvc.crud.interceptors.SecondInterceptor"/>
+        </mvc:interceptor>
+
+        <!--配置LocaleChanceInterceptor-->
         <bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor"/>
     </mvc:interceptors>
 
@@ -71,5 +81,21 @@
     -->
 
     <mvc:view-controller path="/i18n2" view-name="i18n2"/>
+
+    <!--配置MultipartResolver 字节为单位 1024=1kb-->
+    <bean id="multipartResolver"
+          class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="defaultEncoding" value="utf-8"/>
+        <property name="maxUploadSize" value="1024"/>
+    </bean>
+
+    <!--配置使用 SimpleMappingExceptionResolver 来映射异常-->
+    <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+        <property name="exceptionMappings">
+            <props>
+                <prop key="java.lang.ArrayIndexOutOfBoundsException">error</prop>
+            </props>
+        </property>
+    </bean>
 
 </beans>

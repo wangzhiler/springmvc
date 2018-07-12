@@ -1,0 +1,4 @@
+1. SpringMVC的入口是Servlet,而Struts2是Filter
+2. SpringMVC会稍微比Struts2快些,SpringMVC是基于方法设计,而Struts2是基于类,每次发一次请求都会实例一个Action
+3. SpringMVC使用更加简洁,开发效率SpringMVC确实比Struts2高:支持JSR303, 处理Ajax的请求更方便
+3. Struts2的OGNL表达式使页面的开发效率相比SpringMVC更高些

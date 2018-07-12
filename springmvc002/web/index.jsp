@@ -28,6 +28,14 @@
       </script>
   </head>
   <body>
+
+  <form action="testFileUpload" method="post" enctype="multipart/form-data">
+      File:<input type="file" name="file">
+      Desc:<input type="text" name="desc">
+      <input type="submit" value="Submit"/>
+  </form>
+  <br/>
+
   <a href="emps">List All Employees</a>
 
   <br/>
@@ -56,6 +64,18 @@
     3. 配置LocalResolver 和 LocaleChangeInterceptor
   --%>
   <a href="i18n">I18N page</a>
+
+  <br/>
+  <a href="testExceptionHandlerExceptionResolver?i=10">Test ExceptionHandlerExceptionResolver</a>
+
+  <br/>
+  <a href="testResponseStatusExceptionResolver?i=10">Test ResponseStatusExceptionResolver</a>
+
+  <br/>
+  <a href="testDefaultHandlerExceptionResolver">Test DefaultHandlerExceptionResolver</a>
+
+  <br/>
+  <a href="testSimpleMappingExceptionResolver">Test SimpleMappingExceptionResolver</a>
 
   </body>
 </html>
